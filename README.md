@@ -1,6 +1,8 @@
 # Package "taskqueue"
 
-It is an easy library to run/stop a queue of periodic tasks.
+[![GoDoc](https://godoc.org/github.com/z0rr0/taskqueue?status.svg)](https://godoc.org/github.com/z0rr0/taskqueue) [![Build Status](https://travis-ci.org/z0rr0/taskqueue.svg?branch=master)](https://travis-ci.org/z0rr0/taskqueue)
+
+It is a Go library to run/stop a queue of periodic tasks. The method [TestStart](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go#L84) from the file [taskqueue_test.go](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go) contains an example of this library usage.
 
 ### Dependencies
 
@@ -17,7 +19,7 @@ A compliance with the second style guide can be checked using [go-lint](http://g
 
 ### Testing
 
-Use standard Go testing mechanism:
+Standard Go testing way:
 
 ```shell
 cd $GOPATH/src/github.com/z0rr0/taskqueue
