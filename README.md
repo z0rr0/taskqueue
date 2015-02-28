@@ -26,8 +26,6 @@ cd $GOPATH/src/github.com/z0rr0/taskqueue
 go test
 ```
 
-Profile coverage is save in [coverage.out](https://github.com/z0rr0/taskqueue/blob/master/coverage.out) file. There is a [nice article](http://blog.golang.org/cover) about tests covering.
-
 ### License
 
 This source code is governed by a [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.txt) license that can be found in the [LICENSE](https://github.com/z0rr0/taskqueue/blob/master/LICENSE) file.

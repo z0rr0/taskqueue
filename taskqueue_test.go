@@ -15,9 +15,13 @@ import (
 )
 
 const (
-    MaxTestTasks int = 16
-    MaxWorkTime int = 64000000
-    MaxSleepTime int = 128000000
+    // MaxTestTasks is number of tasks.
+    MaxTestTasks int = 64
+    // MaxWorkTime is maximum work time for a task.
+    MaxWorkTime int = 32000000
+    // MaxSleepTime is maximum sleep time for a task.
+    MaxSleepTime int = 64000000
+    // MaxWaitingTime is a working period before stop signal.
     MaxWaitingTime int = 1
 )
 
@@ -82,6 +86,11 @@ func TestDebug(t *testing.T) {
 }
 
 func TestStart(t *testing.T) {
+    defer func() {
+        if r := recover(); r != nil {
+            t.Errorf("abonormal behavior: %v", r)
+        }
+    }()
     Debug(false)
     var group sync.WaitGroup
     tasks := gentasks(-1, false)

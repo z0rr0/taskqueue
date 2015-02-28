@@ -3,8 +3,7 @@
 // license that can be found in the LICENSE file.
 
 // Package taskqueue is a library to run/stop a queue of periodic tasks.
-//
-// A user's task should implement methods of Tasker interface.
+// Every task is handled through Tasker interface by a separated goroutine.
 //
 //     // tasks = []Tasker
 //     var group sync.WaitGroup
