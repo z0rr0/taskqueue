@@ -98,7 +98,7 @@ func Poll(in chan Tasker, out chan Tasker, g *sync.WaitGroup) {
     }
 }
 
-// It will be running when a task is completed and should sleep.
+// Sleep will be running when a task is completed and should sleep.
 // After that, a task will be again sent to "pending" channel,
 // if "stopped" one is empty or not closed.
 func Sleep(t Tasker, pending chan Tasker, stopped chan bool) {
