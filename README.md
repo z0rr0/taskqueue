@@ -4,7 +4,7 @@
 
 It is a Go library to run/stop a queue of periodic tasks. The method [TestStart](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go#L84) from the file [taskqueue_test.go](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go) contains an example of this library usage.
 
-<img src="https://e.t34.me/open/taskqueue.png" title="taskqueue img">
+<img src="https://dl.dropboxusercontent.com/u/10702375/in_out_queue.png" title="taskqueue">
 
 ### Dependencies
 
