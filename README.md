@@ -4,7 +4,7 @@
 
 It is a Go library to run/stop a queue of periodic tasks. The method [TestStart](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go#L88) from the file [taskqueue_test.go](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go) contains an example of this library usage.
 
-<img src="https://raw.githubusercontent.com/z0rr0/taskqueue/master/img.png" title="imgage">
+<img src="https://raw.githubusercontent.com/z0rr0/taskqueue/master/img.png" title="image">
 
 ### Dependencies
 
@@ -17,7 +17,7 @@ There are recommended style guides:
 * [The Go Programming Language Specification](https://golang.org/ref/spec)
 * [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments).
 
-A compliance with the second style guide can be checked using [go-lint](http://go-lint.appspot.com/github.com/z0rr0/taskqueue) tool.
+Check using [go-lint](http://go-lint.appspot.com/github.com/z0rr0/taskqueue) tool.
 
 ### Testing
 
@@ -25,7 +25,7 @@ Standard Go testing way:
 
 ```shell
 cd $GOPATH/src/github.com/z0rr0/taskqueue
-go test
+go test -v -cover
 ```
 
 ### License
@@ -33,4 +33,3 @@ go test
 This source code is governed by a [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.txt) license that can be found in the [LICENSE](https://github.com/z0rr0/taskqueue/blob/master/LICENSE) file.
 
 <img src="https://www.gnu.org/graphics/lgplv3-147x51.png" title="LGPLv3 logo">
-
