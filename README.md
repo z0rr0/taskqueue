@@ -4,6 +4,8 @@
 
 It is a Go library to run/stop a queue of periodic tasks. The method [TestStart](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go#L84) from the file [taskqueue_test.go](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go) contains an example of this library usage.
 
+<!-- <img src="https://e.t34.me/open/tasks.png" title="imgage"> -->
+
 ### Dependencies
 
 Standard [Go library](http://golang.org/pkg/).
@@ -32,4 +34,3 @@ This source code is governed by a [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0
 
 <img src="https://www.gnu.org/graphics/lgplv3-147x51.png" title="LGPLv3 logo">
 
-<img src="https://e.t34.me/open/tasks.png" title="imgage">
