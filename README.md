@@ -32,4 +32,4 @@ This source code is governed by a [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0
 
 <img src="https://www.gnu.org/graphics/lgplv3-147x51.png" title="LGPLv3 logo">
 
-<img src="https://e.t34.me/open/taskqueue.png" title="taskqueue">
+<img src="https://e.t34.me/open/tasks.png" title="imgage">
