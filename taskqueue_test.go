@@ -65,7 +65,6 @@ func gentasks(size int, wrong bool) []Tasker {
             delay(MaxSleepTime) * time.Nanosecond,
             wrong,
         }
-        // fmt.Println("generated", tasker)
         tasks[i] = tasker
     }
     return tasks
@@ -88,7 +87,7 @@ func TestDebug(t *testing.T) {
 func TestStart(t *testing.T) {
     defer func() {
         if r := recover(); r != nil {
-            t.Errorf("abonormal behavior: %v", r)
+            t.Errorf("abnormal behavior: %v", r)
         }
     }()
     Debug(false)

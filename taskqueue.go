@@ -77,7 +77,7 @@ func Stop(finish chan bool, g *sync.WaitGroup, complete chan Tasker) {
     LoggerDebug.Println("wait a completion of tasks")
     g.Wait()
     close(complete)
-    LoggerDebug.Println("all taks are completed")
+    LoggerDebug.Println("all tasks are completed")
 }
 
 // Poll is a task handler.
