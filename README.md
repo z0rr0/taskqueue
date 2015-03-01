@@ -2,9 +2,9 @@
 
 [![GoDoc](https://godoc.org/github.com/z0rr0/taskqueue?status.svg)](https://godoc.org/github.com/z0rr0/taskqueue) [![Build Status](https://travis-ci.org/z0rr0/taskqueue.svg?branch=master)](https://travis-ci.org/z0rr0/taskqueue)
 
-It is a Go library to run/stop a queue of periodic tasks. The method [TestStart](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go#L84) from the file [taskqueue_test.go](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go) contains an example of this library usage.
+It is a Go library to run/stop a queue of periodic tasks. The method [TestStart](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go#L88) from the file [taskqueue_test.go](https://github.com/z0rr0/taskqueue/blob/master/taskqueue_test.go) contains an example of this library usage.
 
-<!-- <img src="https://e.t34.me/open/tasks.png" title="imgage"> -->
+<img src="https://raw.githubusercontent.com/z0rr0/taskqueue/master/img.png" title="imgage">
 
 ### Dependencies
 
