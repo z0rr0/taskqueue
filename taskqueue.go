@@ -2,7 +2,7 @@
 // Use of this source code is governed by a LGPL-style
 // license that can be found in the LICENSE file.
 
-// Package taskqueue is a library to run/stop periodic tasks.
+// Package taskqueue implements methods to control periodic tasks.
 // Every task is handled through Tasker interface by a separated goroutine.
 //
 //     // tasks = []Tasker
@@ -46,9 +46,9 @@ type Tasker interface {
 // it will be used by "Stop" function when all tasks will be finished.
 func Start(tasks []Tasker, g *sync.WaitGroup, finish chan bool) chan Tasker {
     LoggerDebug.Println("called Start()")
-    workers := len(tasks)
     pending, complete := make(chan Tasker), make(chan Tasker)
-    for i := 0; i < workers; i++ {
+    // pending queue has a separated handler method for every new task
+    for range tasks {
         go Poll(pending, complete, g)
     }
     go func() {
@@ -103,9 +103,10 @@ func Poll(in chan Tasker, out chan Tasker, g *sync.WaitGroup) {
     }
 }
 
-// Sleep will be running when a task is completed and should sleep.
+// Sleep will be running when a task is completed
+// and a delay is needed before its new start.
 // After that, a task will be again sent to the "pending" channel,
-// if "stopped" one is empty or not closed.
+// if "stopped" one is empty and not closed.
 func Sleep(t Tasker, pending chan Tasker, stopped chan bool) {
     LoggerDebug.Printf("%v is sleeping\n", t)
     t.Sleep()
