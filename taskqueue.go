@@ -2,7 +2,7 @@
 // Use of this source code is governed by a LGPL-style
 // license that can be found in the LICENSE file.
 
-// Package taskqueue is a library to run/stop a queue of periodic tasks.
+// Package taskqueue is a library to run/stop periodic tasks.
 // Every task is handled through Tasker interface by a separated goroutine.
 //
 //     // tasks = []Tasker
@@ -41,6 +41,9 @@ type Tasker interface {
 }
 
 // Start is a method to start cycles of the tasks.
+// It gets "finish" channel, that will be used to a stop of all goroutines handlers.
+// Return value is a channel of completed tasks,
+// it will be used by "Stop" function when all tasks will be finished.
 func Start(tasks []Tasker, g *sync.WaitGroup, finish chan bool) chan Tasker {
     LoggerDebug.Println("called Start()")
     workers := len(tasks)
@@ -70,7 +73,9 @@ func Start(tasks []Tasker, g *sync.WaitGroup, finish chan bool) chan Tasker {
 }
 
 // Stop is a method to stop the tasks.
-// It's a blocked method, waiting time is related with tasks' implementation.
+// It's a blocking method, because waiting time is related with tasks' implementation.
+// This method always waits all running tasks and
+// stops a moving of completed ones to "pending" queue.
 func Stop(finish chan bool, g *sync.WaitGroup, complete chan Tasker) {
     LoggerDebug.Println("called Stop()")
     close(finish)
@@ -81,7 +86,8 @@ func Stop(finish chan bool, g *sync.WaitGroup, complete chan Tasker) {
 }
 
 // Poll is a task handler.
-// It reads Tasker from "in" channel and write it to "out" one.
+// It reads "Tasker" object from "in" channel,
+// executes its Run method and sends it to "out" one.
 func Poll(in chan Tasker, out chan Tasker, g *sync.WaitGroup) {
     g.Add(1)
     defer g.Done()
@@ -98,7 +104,7 @@ func Poll(in chan Tasker, out chan Tasker, g *sync.WaitGroup) {
 }
 
 // Sleep will be running when a task is completed and should sleep.
-// After that, a task will be again sent to "pending" channel,
+// After that, a task will be again sent to the "pending" channel,
 // if "stopped" one is empty or not closed.
 func Sleep(t Tasker, pending chan Tasker, stopped chan bool) {
     LoggerDebug.Printf("%v is sleeping\n", t)
